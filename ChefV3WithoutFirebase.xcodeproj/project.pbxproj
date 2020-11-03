@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,14 @@
 		B842056A25517333005B8EAA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B842056925517333005B8EAA /* Preview Assets.xcassets */; };
 		B842057525517334005B8EAA /* ChefV3WithoutFirebaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B842057425517334005B8EAA /* ChefV3WithoutFirebaseTests.swift */; };
 		B842058025517334005B8EAA /* ChefV3WithoutFirebaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B842057F25517334005B8EAA /* ChefV3WithoutFirebaseUITests.swift */; };
+		B842059225517361005B8EAA /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B842059125517361005B8EAA /* SDWebImageSwiftUI */; };
+		B842059925517389005B8EAA /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B842059825517389005B8EAA /* Recipe.swift */; };
+		B842059E255173A6005B8EAA /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B842059D255173A6005B8EAA /* RecipeListView.swift */; };
+		B84205A3255173C1005B8EAA /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84205A2255173C1005B8EAA /* RecipeView.swift */; };
+		B84205A8255173F3005B8EAA /* DirectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84205A7255173F3005B8EAA /* DirectionsView.swift */; };
+		B84205B025517402005B8EAA /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84205AF25517402005B8EAA /* SubView.swift */; };
+		B84205B525517421005B8EAA /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84205B425517421005B8EAA /* PageControl.swift */; };
+		B84205BA25517433005B8EAA /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84205B925517433005B8EAA /* PageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +53,13 @@
 		B842057B25517334005B8EAA /* ChefV3WithoutFirebaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChefV3WithoutFirebaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B842057F25517334005B8EAA /* ChefV3WithoutFirebaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefV3WithoutFirebaseUITests.swift; sourceTree = "<group>"; };
 		B842058125517334005B8EAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B842059825517389005B8EAA /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		B842059D255173A6005B8EAA /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
+		B84205A2255173C1005B8EAA /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
+		B84205A7255173F3005B8EAA /* DirectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsView.swift; sourceTree = "<group>"; };
+		B84205AF25517402005B8EAA /* SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubView.swift; sourceTree = "<group>"; };
+		B84205B425517421005B8EAA /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		B84205B925517433005B8EAA /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B842059225517361005B8EAA /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +113,10 @@
 			children = (
 				B842056225517332005B8EAA /* ChefV3WithoutFirebaseApp.swift */,
 				B842056425517332005B8EAA /* ContentView.swift */,
+				B842059625517374005B8EAA /* Model */,
+				B84205972551737B005B8EAA /* Views */,
+				B84205B425517421005B8EAA /* PageControl.swift */,
+				B84205B925517433005B8EAA /* PageViewController.swift */,
 				B842056625517333005B8EAA /* Assets.xcassets */,
 				B842056B25517333005B8EAA /* Info.plist */,
 				B842056825517333005B8EAA /* Preview Content */,
@@ -130,6 +150,25 @@
 			path = ChefV3WithoutFirebaseUITests;
 			sourceTree = "<group>";
 		};
+		B842059625517374005B8EAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B842059825517389005B8EAA /* Recipe.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B84205972551737B005B8EAA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B842059D255173A6005B8EAA /* RecipeListView.swift */,
+				B84205A2255173C1005B8EAA /* RecipeView.swift */,
+				B84205A7255173F3005B8EAA /* DirectionsView.swift */,
+				B84205AF25517402005B8EAA /* SubView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +185,9 @@
 			dependencies = (
 			);
 			name = ChefV3WithoutFirebase;
+			packageProductDependencies = (
+				B842059125517361005B8EAA /* SDWebImageSwiftUI */,
+			);
 			productName = ChefV3WithoutFirebase;
 			productReference = B842055F25517332005B8EAA /* ChefV3WithoutFirebase.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +259,9 @@
 				Base,
 			);
 			mainGroup = B842055625517332005B8EAA;
+			packageReferences = (
+				B842059025517361005B8EAA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = B842056025517332005B8EAA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,8 +304,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B842059925517389005B8EAA /* Recipe.swift in Sources */,
 				B842056525517332005B8EAA /* ContentView.swift in Sources */,
+				B84205B525517421005B8EAA /* PageControl.swift in Sources */,
+				B842059E255173A6005B8EAA /* RecipeListView.swift in Sources */,
 				B842056325517332005B8EAA /* ChefV3WithoutFirebaseApp.swift in Sources */,
+				B84205A8255173F3005B8EAA /* DirectionsView.swift in Sources */,
+				B84205BA25517433005B8EAA /* PageViewController.swift in Sources */,
+				B84205B025517402005B8EAA /* SubView.swift in Sources */,
+				B84205A3255173C1005B8EAA /* RecipeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,6 +632,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B842059025517361005B8EAA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B842059125517361005B8EAA /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B842059025517361005B8EAA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B842055725517332005B8EAA /* Project object */;
 }

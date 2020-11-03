@@ -94,7 +94,7 @@ struct RecipeView: View {
             .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 20)
             .opacity(show ? 1 : 0)
             
-            
+
             ZStack {
                 VStack {
                     HStack (alignment: .top) {

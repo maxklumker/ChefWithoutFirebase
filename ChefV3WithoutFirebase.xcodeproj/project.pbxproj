@@ -21,6 +21,7 @@
 		B84205B025517402005B8EAA /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84205AF25517402005B8EAA /* SubView.swift */; };
 		B84205B525517421005B8EAA /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84205B425517421005B8EAA /* PageControl.swift */; };
 		B84205BA25517433005B8EAA /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84205B925517433005B8EAA /* PageViewController.swift */; };
+		B84205DA25519A2F005B8EAA /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84205D925519A2F005B8EAA /* RecipeDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		B84205AF25517402005B8EAA /* SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubView.swift; sourceTree = "<group>"; };
 		B84205B425517421005B8EAA /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		B84205B925517433005B8EAA /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		B84205D925519A2F005B8EAA /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			children = (
 				B842059D255173A6005B8EAA /* RecipeListView.swift */,
 				B84205A2255173C1005B8EAA /* RecipeView.swift */,
+				B84205D925519A2F005B8EAA /* RecipeDetailView.swift */,
 				B84205A7255173F3005B8EAA /* DirectionsView.swift */,
 				B84205AF25517402005B8EAA /* SubView.swift */,
 			);
@@ -305,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B842059925517389005B8EAA /* Recipe.swift in Sources */,
+				B84205DA25519A2F005B8EAA /* RecipeDetailView.swift in Sources */,
 				B842056525517332005B8EAA /* ContentView.swift in Sources */,
 				B84205B525517421005B8EAA /* PageControl.swift in Sources */,
 				B842059E255173A6005B8EAA /* RecipeListView.swift in Sources */,

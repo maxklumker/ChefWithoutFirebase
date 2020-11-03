@@ -27,7 +27,25 @@ struct DirectionsView: View {
         UIHostingController(rootView:
                                 Subview(imageString: "05_directions_step7")),
         UIHostingController(rootView:
-                                Subview(imageString: "05_directions_step8"))
+                                Subview(imageString: "05_directions_step8")),
+        UIHostingController(rootView:
+                                Subview(imageString: "05_directions_step9")),
+        UIHostingController(rootView:
+                                Subview(imageString: "05_directions_step10")),
+        UIHostingController(rootView:
+                                Subview(imageString: "05_directions_step11")),
+        UIHostingController(rootView:
+                                Subview(imageString: "05_directions_step12")),
+        UIHostingController(rootView:
+                                Subview(imageString: "05_directions_step13")),
+        UIHostingController(rootView:
+                                Subview(imageString: "05_directions_step14")),
+        UIHostingController(rootView:
+                                Subview(imageString: "05_directions_step15")),
+        UIHostingController(rootView:
+                                Subview(imageString: "05_directions_step16")),
+        UIHostingController(rootView:
+                                Subview(imageString: "05_directions_step17")),
     ]
     
     var titles =
@@ -38,7 +56,17 @@ struct DirectionsView: View {
          "Strip the mint leaves from the stem and add the leaves to the blender, then add the stem to the boiling water.",
          "Remove thyme leaves from 2 branches and add them to the food processor, throw the stems into the boiling water.",
          "Add the 3 tablespoons of nutritional yeast (15g),  2 tablespoons of breadcrumbs (25g) and 1 cup of olive oil (125 ml).",
-         "With the blender on, slowly stream in 6 tablespoons of the cold water until the sauce blends smoothly."]
+         "With the blender on, slowly stream in 6 tablespoons of the cold water until the sauce blends smoothly.",
+         "With the blender on, slowly stream in 6 tablespoons of the cold water until the sauce blends smoothly.",
+         "With the blender on, slowly stream in 6 tablespoons of the cold water until the sauce blends smoothly.",
+         "With the blender on, slowly stream in 6 tablespoons of the cold water until the sauce blends smoothly.",
+         "With the blender on, slowly stream in 6 tablespoons of the cold water until the sauce blends smoothly.",
+         "With the blender on, slowly stream in 6 tablespoons of the cold water until the sauce blends smoothly.",
+         "With the blender on, slowly stream in 6 tablespoons of the cold water until the sauce blends smoothly.",
+         "With the blender on, slowly stream in 6 tablespoons of the cold water until the sauce blends smoothly.",
+         "With the blender on, slowly stream in 6 tablespoons of the cold water until the sauce blends smoothly.",
+         "With the blender on, slowly stream in 6 tablespoons of the cold water until the sauce blends smoothly."
+        ]
     
     @State var currentPageIndex = 0
     

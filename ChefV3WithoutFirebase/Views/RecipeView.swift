@@ -178,6 +178,6 @@ struct RecipeView: View {
             .onTapGesture{
                 self.showDirections = false
             }
+        }
     }
-}
 }

@@ -58,8 +58,7 @@ struct RecipeListView: View {
         .animation(.linear)
     }
 }
-
-
+ 
 struct RecipeListView_Previews: PreviewProvider {
     static var previews: some View {
         RecipeListView()

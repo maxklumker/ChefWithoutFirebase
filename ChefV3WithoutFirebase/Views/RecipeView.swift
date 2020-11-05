@@ -100,17 +100,17 @@ struct RecipeView: View {
                 VStack {
                     HStack (alignment: .top) {
                         Text(recipe.title)
-                            .font(.system(size: 24, weight: .bold))
-                            .frame(width: 280, alignment: .leading)
+                            .font(.system(size: 27, weight: .bold))
+                            .frame(width: 334, alignment: .leading)
                             .foregroundColor(.white)
                         
                         Spacer()
                         
                     }
-                    .padding(.leading, show ? 0 : 25)
+                    .padding(.leading, show ? 0 : 36)
                     Spacer()
                 }
-                .padding(.top, show ? 60 : 20)
+                .padding(.top, show ? 60 : 18)
                 .padding(.horizontal, show ? 30 : 16)
                 .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
                 
@@ -156,9 +156,9 @@ struct RecipeView: View {
             .frame(maxWidth: show ? .infinity : screen.width - 41, maxHeight: show ? 493 : 334)
             .background(Image(uiImage: recipe.image)
                             .resizable()
-                            .offset(y: 30)
                             .aspectRatio(contentMode: .fill)
-                            .frame(maxWidth: .infinity))
+                            .offset(y: show ? 0 : -37)
+                            .frame(width: show ? .infinity : 334))
             .clipShape(RoundedRectangle(cornerRadius: show ? 0 : 10, style: .continuous))
             .shadow(color: show ? Color(.black).opacity(0.001) : Color(.black).opacity(0.15), radius: 10, x: 0, y: 10)
             .contentShape(Rectangle())
@@ -206,36 +206,32 @@ struct RecipeView: View {
 //            .onTapGesture{
 //                self.showDirections = false
 //            }
-            
             VStack {
-                HStack (alignment: .top) {
-                    Text(recipe.title)
-                        .font(.system(size: 24, weight: .bold))
-                        .frame(width: 280, alignment: .leading)
-                        .foregroundColor(.white)
-                        .hidden()
-                    
+                HStack {
                     Spacer()
                     VStack {
-                        Image(systemName: "xmark")
-                            .font(.system(size: 16, weight: .medium))
-                            .foregroundColor(.white)
-                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                    }
-                    .frame(width: 36, height: 36)
-                    .background(Color.black.opacity(0.4))
-                    .clipShape(Circle())
-//                        .offset(x: 10, y: -40)
-                    .onTapGesture{
-                        self.showDirections = false
-                            
+                            Image(systemName: "xmark")
+                                .font(.system(size: 16, weight: .medium))
+                                .foregroundColor(.white)
+                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                        }
+                        .frame(width: 36, height: 36)
+                        .background(Color.black.opacity(0.4))
+                        .opacity(show ? 1 : 0)
+                        .clipShape(Circle())
+                        //                            .offset(x: 10, y: -40)
+                        .onTapGesture {
+                            self.showDirections = false
                     }
                 }
-                .padding(.leading, 0)
+                .padding(20)
+                
                 Spacer()
+                
+                Text("")
+                
             }
-            .padding(.top, 60)
-            .padding(.horizontal, 30)
+            .zIndex(1.0)
             
         }
     }

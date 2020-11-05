@@ -19,7 +19,9 @@ struct Recipe: Identifiable {
 }
 
 var recipeData = [
-    Recipe(title: "pea soup with walnut pesto", image:#imageLiteral(resourceName: "01_cover_pea_soup_detail_small_"), serving: "serving 2 adults ・", time: "30 min", ingredients: ["Medium plant"], show: false),
-    Recipe(title: "plant-based Moussaka", image: #imageLiteral(resourceName: "rename pls"), serving: "serving 2 adults ・", time: "30 min", ingredients: ["Medium plant"], show: false),
-    Recipe(title: "mint basil pesto", image: #imageLiteral(resourceName: "03_cover_basil_pesto_detail_small"), serving: "serving 2 adults ・", time: "30 min", ingredients: ["Medium plant"], show: false)
+    Recipe(title: "Pea Soup with Walnut Pesto", image:#imageLiteral(resourceName: "peasoup_detail_1000px_bicsharp"), serving: "serving 2 adults ・", time: "30 min", ingredients: ["Medium plant"], show: false),
+    Recipe(title: "Plant-Based Moussaka", image: #imageLiteral(resourceName: "moussaka_detail_1000px_bicsharp"), serving: "serving 2 adults ・", time: "30 min", ingredients: ["Medium plant"], show: false),
+    Recipe(title: "Mint Basil Pesto", image: #imageLiteral(resourceName: "pesto_detail_1000px_bicsharp"), serving: "serving 2 adults ・", time: "30 min", ingredients: ["Medium plant"], show: false),
+    Recipe(title: "Chicken Tofu Stir Fry", image: #imageLiteral(resourceName: "stirfry_detail_1000px_bicsharp"), serving: "serving 2 adults ・", time: "30 min", ingredients: ["Medium plant"], show: false),
+    Recipe(title: "Mediterranean Lentil Salad", image: #imageLiteral(resourceName: "lentilsalad_detail_1000px_bicsharp"), serving: "serving 2 adults ・", time: "30 min", ingredients: ["Medium plant"], show: false)
 ]

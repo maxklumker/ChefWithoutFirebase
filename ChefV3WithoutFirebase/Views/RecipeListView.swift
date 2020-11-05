@@ -25,9 +25,9 @@ struct RecipeListView: View {
                     Text("Recipes")
                         .font(.largeTitle).bold()
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.leading, 21)
-                        .padding(.top, 30)
-                        .padding(.bottom, 20)
+                        .padding(.leading, 18)
+                        .padding(.top, 47.5)
+                        .padding(.bottom, 4)
                         .blur(radius: active ? 20 : 0)
                     
                     ForEach(recipes.indices, id: \.self) { index in

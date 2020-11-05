@@ -77,11 +77,11 @@ struct RecipeDetailView: View {
                     Spacer()
                 }
                 .frame(maxWidth: show ? .infinity : screen.width - 41 , maxHeight: show ? 493 : 334)
-                .background(WebImage(url: recipe.image)
+                .background(Image(uiImage: recipe.image)
                                 .resizable()
-                                .offset(y: 30)
+                                .offset(x: -20, y: 60)
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: .infinity))
+                                .frame(width: 440))
                 .clipShape(RoundedRectangle(cornerRadius: show ? 0 : 10, style: .continuous))
                 .shadow(color: show ? Color(.black).opacity(0.001) : Color(.black).opacity(0.15), radius: 20, x: 0, y: 20)
                 .contentShape(Rectangle())
@@ -90,7 +90,7 @@ struct RecipeDetailView: View {
                     HStack {
                         VStack (alignment: .leading) {
                             
-                            Text("Ingredients").font(.system(size: 30, weight: .bold))
+                            Text("Ingredients").font(.system(size: 32, weight: .bold))
                                 .foregroundColor(Color.black)
                             
                             HStack {
@@ -153,7 +153,8 @@ struct RecipeDetailView: View {
                         }
                     }
                 }
-                .padding(30)
+                .padding(.top, 26)
+                .padding(.horizontal, 22)
             }
         }
         .edgesIgnoringSafeArea(.all)

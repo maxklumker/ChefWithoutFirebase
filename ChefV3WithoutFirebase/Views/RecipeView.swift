@@ -23,7 +23,7 @@ struct RecipeView: View {
                 HStack {
                     VStack (alignment: .leading) {
                         
-                        Text("Ingredients").font(.system(size: 30, weight: .bold))
+                        Text("Ingredients").font(.system(size: 32, weight: .bold))
                             .foregroundColor(Color.black)
                         
                         HStack {
@@ -86,7 +86,8 @@ struct RecipeView: View {
                     }
                 }
             }
-            .padding(30)
+            .padding(.top, 26)
+            .padding(.horizontal, 22)
             .frame(maxWidth: show ? .infinity : screen.width - 41, maxHeight: show ? .infinity : 334, alignment: .top)
             .offset(y: show ? 493 : 0)
             .background(Color.white)
@@ -153,7 +154,7 @@ struct RecipeView: View {
                 Spacer()
             }
             .frame(maxWidth: show ? .infinity : screen.width - 41, maxHeight: show ? 493 : 334)
-            .background(WebImage(url: recipe.image)
+            .background(Image(uiImage: recipe.image)
                             .resizable()
                             .offset(y: 30)
                             .aspectRatio(contentMode: .fill)

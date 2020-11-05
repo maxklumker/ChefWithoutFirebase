@@ -14,6 +14,7 @@ struct RecipeView: View {
     @Binding var active: Bool
     var index: Int
     @Binding var activeIndex: Int
+    @State var isScrollable = false
     @Binding var showDirections: Bool
     
     var body: some View {
@@ -85,10 +86,9 @@ struct RecipeView: View {
                     }
                 }
             }
-            .padding(.horizontal, 7)
             .padding(30)
             .frame(maxWidth: show ? .infinity : screen.width - 41, maxHeight: show ? .infinity : 334, alignment: .top)
-            .offset(y: show ? 400 : 0)
+            .offset(y: show ? 493 : 0)
             .background(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 20)
@@ -104,20 +104,7 @@ struct RecipeView: View {
                             .foregroundColor(.white)
                         
                         Spacer()
-                        VStack {
-                            Image(systemName: "xmark")
-                                .font(.system(size: 16, weight: .medium))
-                                .foregroundColor(.white)
-                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                        }
-                        .frame(width: 36, height: 36)
-                        .background(Color.black.opacity(0.4))
-                        .clipShape(Circle())
-                        .opacity(show ? 1 : 0)
-                        .offset(x: 10, y: -40)
-                        .onTapGesture{
-                            self.show.toggle()
-                        }
+                        
                     }
                     .padding(.leading, show ? 0 : 25)
                     Spacer()
@@ -126,23 +113,53 @@ struct RecipeView: View {
                 .padding(.horizontal, show ? 30 : 16)
                 .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
                 
+                VStack {
+                    HStack {
+                        Spacer()
+                        VStack {
+                                Image(systemName: "xmark")
+                                    .font(.system(size: 16, weight: .medium))
+                                    .foregroundColor(.white)
+                                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                            }
+                            .frame(width: 36, height: 36)
+                            .background(Color.black.opacity(0.4))
+                            .opacity(show ? 1 : 0)
+                            .clipShape(Circle())
+                            //                            .offset(x: 10, y: -40)
+                            .onTapGesture {
+                                self.show = false
+                                self.active = false
+                                self.activeIndex = -1
+                                self.isScrollable = false
+                        }
+                    }
+                    .padding(20)
+                    
+                    Spacer()
+                    
+                    Text("")
+                    
+                }
+                .zIndex(1.0)
+                
                 Rectangle()
                     .foregroundColor(.clear)
                     .background(LinearGradient(gradient: Gradient(colors: [.clear, Color.black.opacity(1)]), startPoint: .bottom, endPoint: .top))
-                    .frame(width: show ? .infinity : screen.width - 41, height: show ? 400 : 334)
+                    .frame(width: show ? .infinity : screen.width - 41, height: show ? 493 : 334)
                     .offset(y: -216)
                     .cornerRadius(show ? 0 : 10)
                 
                 Spacer()
             }
-            .frame(maxWidth: show ? .infinity : screen.width - 41, maxHeight: show ? 400 : 334)
+            .frame(maxWidth: show ? .infinity : screen.width - 41, maxHeight: show ? 493 : 334)
             .background(WebImage(url: recipe.image)
                             .resizable()
                             .offset(y: 30)
                             .aspectRatio(contentMode: .fill)
                             .frame(maxWidth: .infinity))
             .clipShape(RoundedRectangle(cornerRadius: show ? 0 : 10, style: .continuous))
-            .shadow(color: show ? Color(.black).opacity(0.001) : Color(.black).opacity(0.15), radius: 20, x: 0, y: 20)
+            .shadow(color: show ? Color(.black).opacity(0.001) : Color(.black).opacity(0.15), radius: 10, x: 0, y: 10)
             .contentShape(Rectangle())
             .onTapGesture {
                 self.show.toggle()
@@ -152,6 +169,16 @@ struct RecipeView: View {
                 } else {
                     self.activeIndex = -1
                 }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.isScrollable = true
+                }
+            }
+            
+            if isScrollable {
+                RecipeDetailView(recipe: recipe, show: $show, active: $active, activeIndex: $activeIndex, isScrollable: $isScrollable, showDirections: $showDirections)
+                    .background(Color.white)
+                    .animation(nil)
+                    .transition(.identity)
             }
             
         }
@@ -164,20 +191,51 @@ struct RecipeView: View {
                 .background(Color.white)
                 .animation(nil)
                 .frame(width: screen.width, height: screen.height)
+                .transition(.identity)
+            
+//            VStack {
+//                Image(systemName: "xmark")
+//                    .font(.system(size: 16, weight: .medium))
+//                    .foregroundColor(.white)
+//                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+//            }
+//            .frame(width: 36, height: 36)
+//            .background(Color.black.opacity(0.4))
+//            .clipShape(Circle())
+//            .onTapGesture{
+//                self.showDirections = false
+//            }
             
             VStack {
-                Image(systemName: "xmark")
-                    .font(.system(size: 16, weight: .medium))
-                    .foregroundColor(.white)
-                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                HStack (alignment: .top) {
+                    Text(recipe.title)
+                        .font(.system(size: 24, weight: .bold))
+                        .frame(width: 280, alignment: .leading)
+                        .foregroundColor(.white)
+                        .hidden()
+                    
+                    Spacer()
+                    VStack {
+                        Image(systemName: "xmark")
+                            .font(.system(size: 16, weight: .medium))
+                            .foregroundColor(.white)
+                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                    }
+                    .frame(width: 36, height: 36)
+                    .background(Color.black.opacity(0.4))
+                    .clipShape(Circle())
+//                        .offset(x: 10, y: -40)
+                    .onTapGesture{
+                        self.showDirections = false
+                            
+                    }
+                }
+                .padding(.leading, 0)
+                Spacer()
             }
-            .frame(width: 36, height: 36)
-            .background(Color.black.opacity(0.4))
-            .clipShape(Circle())
-            .offset(x: screen.width - 48, y: 20)
-            .onTapGesture{
-                self.showDirections = false
-            }
+            .padding(.top, 60)
+            .padding(.horizontal, 30)
+            
         }
     }
 }

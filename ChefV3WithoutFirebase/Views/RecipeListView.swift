@@ -19,14 +19,15 @@ struct RecipeListView: View {
             Color.black.opacity(active ? 0.5 : 0)
                 .animation(.linear)
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 
-                VStack (spacing: 30) {
+                VStack (spacing: 20) {
                     Text("Recipes")
                         .font(.largeTitle).bold()
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, 21)
                         .padding(.top, 30)
+                        .padding(.bottom, 20)
                         .blur(radius: active ? 20 : 0)
                     
                     ForEach(recipes.indices, id: \.self) { index in

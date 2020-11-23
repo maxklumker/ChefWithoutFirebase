@@ -13,7 +13,7 @@ https://github.com/SDWebImage/SDWebImageSwiftUI.git
 Go to the Menubar and click on File/ Swift Packages/ Add Package Dependency and insert the url. Follow the installation instructions and use the lastest version of SDWebImageSwiftUI.
 
 ## Video of running app
-[Video](https://www.youtube.com/watch?v=frNuv65rvlY&feature=youtu.be)
+Click [here](https://www.youtube.com/watch?v=frNuv65rvlY&feature=youtu.be) to see the video.
 
 ## Author
 **Maximilian Klumker**

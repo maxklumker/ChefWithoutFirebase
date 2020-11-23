@@ -19,9 +19,9 @@ struct Recipe: Identifiable {
 }
 
 var recipeData = [
-    Recipe(title: "Pea Soup with Walnut Pesto", image:#imageLiteral(resourceName: "peasoup_detail_1000px_bicsharp"), serving: "serving 2 adults ・", time: "30 min", ingredients: ["Medium plant"], show: false),
-    Recipe(title: "Plant-Based Moussaka", image: #imageLiteral(resourceName: "moussaka_detail_1000px_bicsharp"), serving: "serving 2 adults ・", time: "30 min", ingredients: ["Medium plant"], show: false),
-    Recipe(title: "Mint Basil Pesto", image: #imageLiteral(resourceName: "pesto_detail_1000px_bicsharp"), serving: "serving 2 adults ・", time: "30 min", ingredients: ["Medium plant"], show: false),
-    Recipe(title: "Chicken Tofu Stir Fry", image: #imageLiteral(resourceName: "stirfry_detail_1000px_bicsharp"), serving: "serving 2 adults ・", time: "30 min", ingredients: ["Medium plant"], show: false),
-    Recipe(title: "Mediterranean Lentil Salad", image: #imageLiteral(resourceName: "lentilsalad_detail_1000px_bicsharp"), serving: "serving 2 adults ・", time: "30 min", ingredients: ["Medium plant"], show: false)
+    Recipe(title: "Pea Soup with Walnut Pesto", image:#imageLiteral(resourceName: "peasoup_detail_1000px_bicsharp"), serving: "for 2 adults・", time: "30 min", ingredients: ["Medium plant"], show: false),
+    Recipe(title: "Plant-Based Moussaka", image: #imageLiteral(resourceName: "moussaka_detail_1000px_bicsharp"), serving: "for 2 adults・", time: "30 min", ingredients: ["Medium plant"], show: false),
+    Recipe(title: "Mint Basil Pesto", image: #imageLiteral(resourceName: "pesto_detail_1000px_bicsharp"), serving: "for 2 adults・", time: "30 min", ingredients: ["Medium plant"], show: false),
+    Recipe(title: "Chicken Tofu Stir Fry", image: #imageLiteral(resourceName: "stirfry_detail_1000px_bicsharp"), serving: "for 2 adults・", time: "30 min", ingredients: ["Medium plant"], show: false),
+    Recipe(title: "Mediterranean Lentil Salad", image: #imageLiteral(resourceName: "lentilsalad_detail_1000px_bicsharp"), serving: "for 2 adults・", time: "30 min", ingredients: ["Medium plant"], show: false)
 ]

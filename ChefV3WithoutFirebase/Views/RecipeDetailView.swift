@@ -23,8 +23,8 @@ struct RecipeDetailView: View {
                     VStack {
                         HStack (alignment: .top) {
                             Text(recipe.title)
-                                .font(.system(size: 24, weight: .bold))
-                                .frame(width: 280, alignment: .leading)
+                                .font(.system(size: show ? 48 : 27, weight: .bold))
+                                .frame(width: 334, alignment: .leading)
                                 .foregroundColor(.white)
                             
                             Spacer()
@@ -32,23 +32,20 @@ struct RecipeDetailView: View {
                         .padding(.leading, show ? 0 : 25)
                         Spacer()
                     }
-                    .padding(.top, show ? 60 : 20)
-                    .padding(.horizontal, show ? 30 : 16)
+                    .padding(.top, show ? 49 : 20)
+                    .padding(.horizontal, show ? 21 : 16)
                     .zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
                     
                     VStack {
                         HStack {
                             Spacer()
                             VStack {
-                                    Image(systemName: "xmark")
-                                        .font(.system(size: 16, weight: .medium))
-                                        .foregroundColor(.white)
-                                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                Image("X")
+                                        .font(.system(size: 18, weight: .medium))
                                 }
-                                .frame(width: 36, height: 36)
-                                .background(Color.black.opacity(0.4))
+                                .frame(width: 30, height: 30)
+                                .background(Color("darkgray").opacity(0.4))
                                 .clipShape(Circle())
-                                //                            .offset(x: 10, y: -40)
                                 .onTapGesture {
                                     self.show = false
                                     self.active = false
@@ -56,7 +53,8 @@ struct RecipeDetailView: View {
                                     self.isScrollable = false
                             }
                         }
-                        .padding(20)
+                        .padding(.top, 20)
+                        .padding(.trailing, 29)
                         
                         Spacer()
                         
@@ -95,32 +93,37 @@ struct RecipeDetailView: View {
                             
                             HStack {
                                 Text(recipe.serving)
-                                    .font(.system(size: 15, weight: .medium))
-                                    .foregroundColor(Color.black)
+                                    .font(.system(size: 18, weight: .semibold))
+                                    .foregroundColor(Color("spacegray"))
                                 Text(recipe.time)
-                                    .font(.system(size: 15, weight: .medium))
-                                    .foregroundColor(Color.black)
-                                    .offset(x: -5)
+                                    .font(.system(size: 18, weight: .semibold))
+                                    .foregroundColor(Color("spacegray"))
+                                    .offset(x: -10)
                             }
+                            .padding(.top, -6)
                         }
                         Spacer()
                         
                         //Go Button
                         ZStack {
                             Circle()
-                                .frame(width: 60, height: 60)
-                                .foregroundColor(Color.blue)
+                                .frame(width: 64, height: 64)
+                                .foregroundColor(Color("pacificblue"))
                                 .clipShape(Circle())
                             Text("GO")
                                 .font(.system(size: 20, weight: .bold))
                                 .foregroundColor(Color.white)
                                 .padding()
                         }
+                        .padding(.trailing, 8)
+                        .offset(y: 3)
                         .onTapGesture {
                             self.showDirections.toggle()
                         }
-                        
                     }
+                    .padding(.leading, 2)
+                    .padding(.bottom, -13)
+                    
                     ForEach(0 ..< 5) { item in
                         VStack (alignment: .leading) {
                             HStack (spacing: 12) {
@@ -131,30 +134,31 @@ struct RecipeDetailView: View {
                                     .foregroundColor(.clear)
                                     .overlay(Circle()
                                                 .stroke(Color(.black).opacity(0.15), lineWidth: 2))
-                                    .padding(.leading)
                                 
                                 VStack (alignment: .leading, spacing: 1) {
                                     Text("Ingredient name")
-                                        .font(.system(size: 24, weight : .bold))
+                                        .font(.system(size: 25, weight : .bold))
                                         .foregroundColor(.black)
                                     
                                     HStack {
                                         Text("1 medium")
-                                            .font(.system(size: 18, weight: .regular))
+                                            .font(.system(size: 25, weight: .regular))
                                             .foregroundColor(.black)
                                         Text("300 gramm")
-                                            .font(.system(size: 18, weight: .regular))
-                                            .foregroundColor(Color(.black).opacity(0.15))
+                                            .font(.system(size: 25, weight: .regular))
+                                            .foregroundColor(Color("darkgray"))
                                     }
                                     .padding(.trailing)
                                 }
                             }
-                            .padding(.horizontal, -20)
+                            .padding(.bottom, -20)
                         }
+                        .padding(.leading, 4)
                     }
                 }
-                .padding(.top, 26)
-                .padding(.horizontal, 22)
+                .padding(.top, 27)
+                .padding(.bottom, 57)
+                .padding(.horizontal, 20)
             }
         }
         .edgesIgnoringSafeArea(.all)
